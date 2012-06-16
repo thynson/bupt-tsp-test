@@ -1,0 +1,3 @@
+[submodule "bupt-tsp-static"]
+	path = bupt-tsp-static
+	url = ./bupt-tsp-static
