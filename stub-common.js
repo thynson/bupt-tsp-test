@@ -6,7 +6,6 @@ var url = require("url");
 
 
 exports.createStubServer = function(callback, option){
-	var cookie = option.cookie || {};
 	var basePath = option.basePath || null;
 	option.port = option.port || 8080;
 
@@ -15,7 +14,6 @@ exports.createStubServer = function(callback, option){
 
 	var server = http.createServer(function(req, res){
 		con.log(req.url);
-		res.setHeader('Set-Cookie', cookie);
 		try {
 			var u = url.parse(req.url);
 			if (u.pathname.match(/.+\..+/g)) {
@@ -23,7 +21,7 @@ exports.createStubServer = function(callback, option){
 					+ u.pathname);
 				file.pipe(res);
 			} else {
-				callback(req,res);
+				callback(req, res, u);
 			}
 		} catch(err) {
 			con.dir(err);
