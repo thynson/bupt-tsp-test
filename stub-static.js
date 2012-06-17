@@ -2,9 +2,11 @@
 
 var stub = require("./stub-common");
 
-var server = stub.createStubServer(function(request, response){
+var server = stub.createStubServer(function(request, response, url){
 	response.end();
-
-}, {basePath : "bupt-tsp"});
+}, {
+	basePath : "bupt-tsp",
+	port : 8080,
+});
 
 

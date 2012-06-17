@@ -8,6 +8,7 @@ var url = require("url");
 exports.createStubServer = function(callback, option){
 	var cookie = option.cookie || {};
 	var basePath = option.basePath || null;
+	option.port = option.port || 8080;
 
 	if (basePath === null)
 		return null;
@@ -28,6 +29,6 @@ exports.createStubServer = function(callback, option){
 			con.dir(err);
 		}
 	});
-	server.listen(8080);
+	server.listen(option.port);
 	return server;
 }
