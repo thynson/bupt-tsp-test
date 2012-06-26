@@ -4,7 +4,7 @@ var stub = require("./stub-common");
 
 var server = stub.createStubServer(function(request, response, url){
 	if (url.pathname == "/login") {
-		response.setHeader("Set-Cookie", ["username=dummy", "identity=dummy"]);
+		response.setHeader("Set-Cookie", ["username=dummy", "identity=student"]);
 		response.write("{}");
 	} else if (url.pathname == "/announce") {
 		response.write("Dummy anouncement");
