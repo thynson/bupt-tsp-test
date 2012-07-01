@@ -25,7 +25,8 @@ var server = stub.createStubServer(function(request, response, url){
 					realname : "ddd",
 					username : "dummy"
 
-				}
+				},
+				selected_by : []
 			}, {
 				id : "xxxx",
 				name : "其他毕业设计系统",
@@ -37,6 +38,13 @@ var server = stub.createStubServer(function(request, response, url){
 					realname : "ddd",
 					username : "dummy"
 				}
+				selected_ty : [ {
+					username : "09212001",
+					realname :  "当米一"
+				}, {
+					username : "09212002",
+					realname :  "当米二"
+				}]
 			}]
 		}));
 	} else if (url.pathname == "/student") {
