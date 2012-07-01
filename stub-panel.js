@@ -62,7 +62,7 @@ var server = stub.createStubServer(function(request, response, url){
 	} else if (url.pathname == "/announce") {
 		response.write(JSON.stringify({
 			announce : "正在调试中"
-		});
+		}));
 	} else {
 		response.write(JSON.stringify({}));
 	}
